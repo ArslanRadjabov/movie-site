@@ -1,11 +1,11 @@
 const elMovieList = document.querySelector('.movies__list');
 
 // var randomCards = movies[Math.floor(Math.random(30) * movies.length)];
-let n1 = Math.floor(Math.random() * movies.length - 9) + 1
+let n1 = Math.floor(Math.random() * movies.length - 29) + 1
 
 let idx = 0;
 
-for (let i = n1; i < n1 + 11; i++) {
+for (let i = n1; i < n1 + 30; i++) {
     let li = document.createElement("li")
     li.className = 'movies__item ';
     li.innerHTML = `<div class="movies__img-item">
