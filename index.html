@@ -1,23 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lesson</title>
-    <link
-      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/flexboxgrid.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
-    />
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="css/main.min.css" />
-  </head>
+</head>
 
-  <body>
+<body>
+
+    <header class="header">
+        <nav class="header__nav">
+            <ul class="header__list d-flex">
+                <div class="header__logo">
+                    <img src="images/logo.gif" alt="logotip">
+                </div>
+                <div class="search-bar">
+                    <input class="search-bar__item" type="text" placeholder="search movie">
+                    <i class='bx bx-search'></i>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn__nav btn-bosh" type="button" id="dropdownMenuButton1">
+                    <a href="#">Bosh Sahifa</a>
+                  </button>
+                    <button class="btn__nav btn-kinolar dropdown-toggle" type="button" id="dropdownMenuButton1">
+                    Kinolar
+                  </button>
+                    <button class="btn__nav btn-serial" type="button" id="dropdownMenuButton1">
+                      Seriallar
+                    </button>
+                    <button class="btn__nav btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Janr
+                    </button>
+                    <button class="btn__nav btn-yil dropdown-toggle" type="button" id="dropdownMenuButton1">
+                      Yil
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Thriller</a></li>
+                        <li><a class="dropdown-item" href="#">Fantastic</a></li>
+                        <li><a class="dropdown-item" href="#">Documentary</a></li>
+                        <li><a class="dropdown-item" href="#">Music</a></li>
+                        <li><a class="dropdown-item" href="#">Adventure</a></li>
+                        <li><a class="dropdown-item" href="#">Comedy</a></li>
+                        <li><a class="dropdown-item" href="#">Animation</a></li>
+                    </ul>
+                </div>
+
+            </ul>
+        </nav>
+
+    </header>
+    <main class="main">
+        <section class="hero">
+            <div class="container__hero">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <h2 class="carusel__title">PREMYERA</h2>
+                        <div class="carousel-item active">
+                            <img src="http://images.uzmovi.com/2022-03-23/16dfcf8e7c54290daffa7e3a87580578.jpg" class="d-block w-100" alt="hero_img">
+                            <a href="#"><i class='bx bx-play-circle'></i></a>
+                            <h2 class="carusel__imgTitle">Qaroqchilar 2 so'nggi qirollik xazinasi premyera</h2>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="http://images.uzmovi.com/2022-03-16/bafaf2f6d5d01b82848f61fe24a161d7.jpg" class="d-block w-100" alt="hero_img">
+                            <a href="#"><i class='bx bx-play-circle'></i></a>
+                            <h2 class="carusel__imgTitle">Adam loyihasi premyera</h2>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="http://images.uzmovi.com/2022-03-12/8a3880961aac66b5126d2f3430c326ea.jpg" class="d-block w-100" alt="hero_img">
+                            <a href="#"><i class='bx bx-play-circle'></i></a>
+                            <h2 class="carusel__imgTitle">O'rgimchak odam uyga yo'l yo'q premyera</h2>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+                </div>
+            </div>
+        </section>
+        <section class="movies">
+            <div class="container">
+                <ul class="movies__list d-flex">
+                    <!-- <li class="movies__item ">
+                    <div class="movies__img-item">
+                        <img class='movies__img' src="http://i3.ytimg.com/vi/4hZi5QaMBFc/maxresdefault.jpg" alt="img">
+                    </div>
+                    <div class="movies__desc p-3">
+                        <div class="movies__header d-flex">
+                            <h3 class="movies__name">Harry Potter</h3>
+                            <i class='bx bxs-bookmark-star'></i>
+                        </div>
+                        <p class="movies__year">2009</p>
+                        <br>
+                        <button type="button" class="btn btn-primary movies__wathBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          Watch
+                        </button>
+                    </div>
+                </li>
+            </ul>
+            
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body  ">
+                            <div class="modal-img-desc">
+                                <div class="modal-img">
+                                    <img class="modal-img__item" src="http://i3.ytimg.com/vi/4hZi5QaMBFc/maxresdefault.jpg" alt="film-img">
+                                </div>
+                                <div class="desc-modal">
+                                    <p class="desc-modal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione non totam officia, voluptate deserunt, quae similique facere quasi est provident, soluta aliquid ut eius. Doloremque dignissimos corrupti magnam voluptates
+                                        pariatur!
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="modal-desc">
+                                <ul class="modal__list">
+                                    <li class="modal__item">Film Name: asdasdasd</li>
+                                    <li class="modal__item">Film Rank:sadasdasd </li>
+                                    <li class="modal__item">Category: asdasdasd</li>
+                                    <li class="modal__item">Film Year: dasdasdasd</li>
+                                    <li class="modal__item">Film runtime: </li>
+                                </ul>
+                                <div class="modal-desc__btns">
+                                    <a class="modal__startFilm" href="#">Start film</a>
+                                    <button class="modal__favoritBtn">Add to favourits</button>
+                                </div>
+                                <div class="like-btns">
+                                    <i class='bx bx-like'></i>
+                                    <input type="number" class="likeInput">
+                                    <i class='bx bx-dislike'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ -->
+
+            </div>
+
+
+
+        </section>
+
+
+    </main>
+
+
+    <script src="js/normalized-movies.js"></script>
     <script src="js/main.js"></script>
-  </body>
+</body>
+
 </html>

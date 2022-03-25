@@ -1,9 +1,19 @@
 /* CONTAINER */
+
 .container {
-  width: 100%;
-  max-width: $width-container;
-  padding-left: $p-container;
-  padding-right: $p-container;
-  margin-left: auto;
-  margin-right: auto;
+    width: 100%;
+    max-width: $width-container;
+    padding-left: $p-container;
+    padding-right: $p-container;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container__hero {
+    width: 100%;
+    max-width: $width-container;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
