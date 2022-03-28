@@ -89,6 +89,11 @@ img {
   line-height: none !important;
 }
 
+.imgtitle-spider {
+  position: absolute;
+  bottom: 400px;
+}
+
 .search-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,6 +101,7 @@ img {
 }
 
 .search-bar .search-bar__item {
+  width: 400px;
   padding: 5px 20px;
   border-radius: 2px;
   background-color: #222933;
@@ -227,6 +233,15 @@ img {
           flex-direction: row;
   background-color: #131A20;
   padding: 50px 0;
+}
+
+.movies .movies__title {
+  font-weight: 700;
+  font-size: 25px;
+  color: #A5BBDC;
+  border-left: 10px solid #20c2eb;
+  padding: 0 10px;
+  margin-bottom: 20px;
 }
 
 .movies .movies__img-item {
@@ -475,6 +490,29 @@ img {
   height: 80vh;
 }
 
+.hero .carousel-indicators {
+  position: absolute;
+  top: -10rem;
+  left: 90%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.hero .carousel-indicators p {
+  background-color: transparent;
+}
+
+.hero .carousel-indicators a {
+  color: #dddfe2;
+  font-size: 20px;
+  text-decoration: none;
+  position: absolute;
+  left: 1000px;
+}
+
 .hero .carousel-control-prev {
   padding: 20px;
   background-color: #9B59B6;
@@ -524,10 +562,16 @@ img {
   text-shadow: 2px 2px 0px rgba(124, 124, 124, 0.53);
 }
 
+.hero .carousel-item .imgtitle-spider {
+  position: absolute;
+  z-index: 99;
+  bottom: 320px;
+}
+
 .hero .carousel-item .bx-play-circle {
   font-size: 90px;
   position: absolute;
-  top: 33%;
+  top: 29%;
   left: 45%;
   z-index: 99;
   color: #149BBC;
@@ -539,5 +583,13 @@ img {
   transition: all ease 0.3s;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+.movies__searchbar {
+  background-color: #222933;
+}
+
+.searching__bar-main {
+  gap: 50px;
 }
 /*# sourceMappingURL=main.css.map */

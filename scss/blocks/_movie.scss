@@ -17,9 +17,15 @@
     line-height: none !important;
 }
 
+.imgtitle-spider {
+    position: absolute;
+    bottom: 400px;
+}
+
 .search-bar {
     display: flex;
     .search-bar__item {
+        width: 400px;
         padding: 5px 20px;
         border-radius: 2px;
         background-color: #222933;
@@ -113,6 +119,14 @@
 }
 
 .movies {
+    .movies__title {
+        font-weight: 700;
+        font-size: 25px;
+        color: #A5BBDC;
+        border-left: 10px solid #20c2eb;
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
     display: flex;
     flex-direction: row;
     background-color: #131A20;
@@ -303,6 +317,23 @@
     .carousel-inner {
         height: 80vh;
     }
+    .carousel-indicators {
+        position: absolute;
+        top: -10rem;
+        left: 90%;
+        flex-direction: column;
+        gap: 20px;
+        p {
+            background-color: transparent;
+        }
+        a {
+            color: #dddfe2;
+            font-size: 20px;
+            text-decoration: none;
+            position: absolute;
+            left: 1000px;
+        }
+    }
     .carousel-control-prev {
         padding: 20px;
         background-color: #9B59B6;
@@ -345,10 +376,19 @@
             transition: all ease 0.3s;
             text-shadow: 2px 2px 0px rgba(124, 124, 124, 0.53);
         }
+        .imgtitle-spider {
+            position: absolute;
+            z-index: 99;
+            bottom: 320px;
+        }
+        // .second_play-circle {
+        //     position: absolute;
+        //     top: 20%;
+        // }
         .bx-play-circle {
             font-size: 90px;
             position: absolute;
-            top: 33%;
+            top: 29%;
             left: 45%;
             z-index: 99;
             color: #149BBC;
@@ -359,4 +399,12 @@
             }
         }
     }
+}
+
+.movies__searchbar {
+    background-color: #222933;
+}
+
+.searching__bar-main {
+    gap: 50px;
 }
