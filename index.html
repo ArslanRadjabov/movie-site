@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/main.min.css" />
 </head>
 
-<body id="body">
+<body>
 
     <header class="header">
         <nav class="header__nav">
@@ -23,26 +23,15 @@
                 <div class="header__logo">
                     <img src="images/logo.gif" alt="logotip">
                 </div>
-
-                <div class="search-bar">
-                    <input id="hid-Isearc" class="search-bar__item" type="text" placeholder="search movie">
+                <!-- ---------------------------------------------------------------------------------------------- -->
+                <div class="search-bar" id="searchWrapper">
+                    <input id="searchBar" class="search-bar__item" type="text" placeholder="search movie">
                     <i class='bx bx-search' id="id-searchBtn"></i>
                 </div>
 
-                <section class="search" onclick="funMain(event)" id="searchbox">
-                    <div class="container">
-                        <div class="search__main" id="search-main">
-                            <div class="search__box d-flex align-items-center">
-                                <h2 class="search__title">Result</h2>
-                            </div>
-                            <ul class="search__list" id="id-search">
 
-                            </ul>
+                <!-- ----------------------------------------------------------------------------------------------------- -->
 
-
-                        </div>
-                    </div>
-                </section>
 
                 <div class="dropdown">
                     <button class="btn__nav btn-bosh" type="button" id="dropdownMenuButton1">
@@ -177,61 +166,58 @@
         <section class="movies__searchbar">
             <div class="container">
                 <div class="searching__bar-main d-flex">
-                    <div class="search-bar">
-                        <input class="search-bar__item" type="text" placeholder="search movie">
-                        <i class='bx bx-search'></i>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+
+                    <form class="d-flex form" id="form">
+
+                        <input class="search-bar__item2" type="text" placeholder="search movie">
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle all-btn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                          All
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item active" href="#">Fantastic</a></li>
-                            <li>
-                                <a class="dropdown-item" href="#">Thriller</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#">Music</a></li>
-                            <li><a class="dropdown-item" href="#">Adventure</a></li>
-                            <li><a class="dropdown-item" href="#">Comedy</a></li>
-                            <li><a class="dropdown-item" href="#">Animation</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item active" href="#">Fantastic</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Thriller</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Thriller</a></li>
+                                <li><a class="dropdown-item" href="#">Fantastic</a></li>
+                                <li><a class="dropdown-item" href="#">Documentary</a></li>
+                                <li><a class="dropdown-item" href="#">Music</a></li>
+                                <li><a class="dropdown-item" href="#">Adventure</a></li>
+                                <li><a class="dropdown-item" href="#">Comedy</a></li>
+                                <li><a class="dropdown-item" href="#">Animation</a></li>
 
-                        </ul>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                         1992
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item active" href="#">1995</a></li>
-                            <li><a class="dropdown-item" href="#">1998</a></li>
-                            <li><a class="dropdown-item" href="#">2000</a></li>
-                        </ul>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                         2005
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item active" href="#">2006</a></li>
-                            <li><a class="dropdown-item" href="#">2009</a></li>
-                            <li><a class="dropdown-item" href="#">2011</a></li>
-                            <li><a class="dropdown-item" href="#">2015</a></li>
-                            <li><a class="dropdown-item" href="#">2020</a></li>
-                            <li><a class="dropdown-item" href="#">2022</a></li>
+                            </ul>
+                        </div>
+                        <input type="number" placeholder="year" id="year">
+                        <input type="submit" value="submit" class="submit">
+                    </form>
 
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </section>
+
+        <section class="search__lists">
+            <div class="container">
+
+                <ul class="search__results">
+
+                </ul>
+
+            </div>
+        </section>
+
         <section class="movies">
             <div class="container">
                 <h2 class="movies__title">Tarjima Kinolar</h2>
 
 
 
-                <ul class="movies__list d-flex">
-                    <li class="movies__item ">
+                <ul class="movies__list d-flex" id="characterlist">
+                    <!-- <li class="movies__item ">
                         <div class="movies__img-item">
                             <img class='movies__img' src="http://i3.ytimg.com/vi/4hZi5QaMBFc/maxresdefault.jpg" alt="img">
                         </div>
@@ -246,7 +232,7 @@
                           Watch
                         </button>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
 
 

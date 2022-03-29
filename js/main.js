@@ -1,7 +1,7 @@
 const elMovieList = document.querySelector('.movies__list');
 
 const menuList = document.querySelector(".offcanvas-body__list");
-const elbody = document.querySelector("#body")
+
 let newarrayCinema = [];
 
 let n1 = Math.floor(Math.random() * movies.length - 29) + 1
@@ -115,217 +115,60 @@ function addItem(imdbId) {
     }
 }
 
-function removeItem(imdbId) {
-    let newArrRemove = [];
+// function removeItem(imdbId) {
+//     let newArrRemove = [];
 
-    for (let i = 0; i < newMovies.length; i++) {
-        if (imdbId != i) {
-            newArrRemove.push(newMovies[i]);
-        }
-    }
+//     for (let i = 0; i < newMovies.length; i++) {
+//         if (imdbId != i) {
+//             newArrRemove.push(newMovies[i]);
+//         }
+//     }
 
-    newMovies = newArrRemove;
+//     newMovies = newArrRemove;
 
-    menuList.innerHTML = "";
+//     menuList.innerHTML = "";
 
-}
-
-
-
-const elSearchBox = document.querySelector('#searchbox');
-const elSearch = document.querySelector('#id-search');
-const elIsearch = document.querySelector('#id-Isearch');
-const elSearchBtn = document.querySelector('#id-searchBtn');
-const elSearchMain = document.querySelector('#search-main');
-
-
-function funMain(e) {
-    let a = e.path[1].id
-    let b = e.path[0].id
-
-    console.log(b)
-
-    if (a == elSearchBox.id || b == elSearchBox.id) {
-        elSearchBox.style.display = 'none'
-        elIsearch.value = ""
-        elSearch.innerHTML = ''
-        elbody.style.overflow = 'auto'
-    }
-}
-
-elIsearch.addEventListener("focusin", myFocusFunction);
-
-function myFocusFunction() {
-    elSearchBox.style.display = 'block';
-    elbody.style.overflow = 'hidden'
-}
-
-
-let a = 0
-elIsearch.addEventListener('keyup', (e) => {
-    elSearch.innerHTML = ''
-    let values = e.target.value.toLowerCase()
-
-    if (!elIsearch.value.trim()) {
-        elSearch.innerHTML = null
-        elIsearch.value = null
-    } else {
-
-        for (let i = 0; i < movies.length; i++) {
-            if (movies[i].title.toLowerCase().indexOf(values) != -1) {
-
-                let [li, imgdiv, img, h3] = createElements('li', 'div', 'img', 'h3')
-
-                li.className = 'search__item d-flex';
-                li.setAttribute('onclick', 'funFilms(event)');
-                li.setAttribute('id', movies[i].imdbId);
-
-                imgdiv.className = 'search__imgbox';
-                img.className = "search__img"
-                img.setAttribute('src', movies[i].youtubePoster);
-                h3.className = 'search__name';
-                h3.textContent = movies[i].title;
-
-                //liga qoshish
-                imgdiv.appendChild(img)
-                li.appendChild(imgdiv)
-                li.appendChild(h3)
-                elSearch.appendChild(li);
-            }
-        }
-    }
-})
-
-
-
-
-
-// function addItemArray(listId) {
-//     newarrayCinema.push(movies.filter((item) => item.imdbId === listId)[0]);
-//     addCart(newarrayCinema);
 // }
 
 
-// function addCart(cartCinemaArray) {
-//     let arr = cartCinemaArray;
-//     let topArr = [];
+const Filterform = document.getElementById('form');
+const search = document.getElementsByClassName('search-bar__item2')
+const result = document.getElementsByClassName('search__results')
 
-//     arr.forEach((item) => {
-//         if (arr != "") topArr.push(arr[0]);
-//         arr = arr.filter((el) => {
-//             return arr[0].imdbId != el.imdbId;
-//         });
-//     });
-
-//     let li = 0;
-//     let listArr = [];
+Filterform.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let value2 = search.value.toLowerCase();
 
 
-//     topArr.forEach((item) => {
-//         let count = newarrayCinema.filter((element) => {
-//             return element.imdbId == item.imdbId;
-//         });
-//         li = `<li class="movies__item ">
-//         <div class="movies__img-item">
-//         <img class='movies__img' src="${item.youtubePosterMax}" alt="img">
-//     </div>
-//         <div class="movies__desc p-3">
-//         <p class="movies__year"> ${item.year}</p>
-//             <div class="movies__header d-flex">
-//                 <h5 class="movies__name">${item.title}</h5>
-//                 <i class='bx bxs-bookmark-star'></i>
-//             </div>
-//             <br>
-//             <span id="total" class="count">
-//              ${count.length}
-//             </span>
-//             <button  type="button" class="btn btn-primary movies__wathBtn" data-bs-toggle="modal" data-bs-target="#exampleModal${idx}">
-//                               Watch
-//             </button>
-//           <button class="pizza__btn remove" onclick="remove(${item.imdbId})">
-//             -
-//           </button>
-//         </div> 
-//     </li>
-// `;
+    result.innerHTML = '';
+    movies.forEach(el => {
+        let title = el.title.toLowerCase();
+        if (title.indexOf(value) != -1) {
+            let li = document.createElement('li');
+            li.className = "movies__item";
+            li.innerHTML = `  
+            <div class="movies__img-item">
+        <img class='movies__img' src="${el.youtubePosterMax}" alt="img">
+    </div>
+        <div class="movies__desc p-3">
+        <p class="movies__year"> ${el.year}</p>
+            <div class="movies__header d-flex">
+                <h5 class="movies__name">${el.title}</h5>
+                <i class='bx bxs-bookmark-star'></i>
+            </div>
+            <br>
+            <button  type="button" class="btn btn-primary movies__wathBtn" data-bs-toggle="modal" data-bs-target="#exampleModal${idx}">
+                              Watch
+            </button>
+          <button class="pizza__btn remove" onclick="remove('${el.imdbId}')">
+            -
+          </button>
+        </div> `;
 
 
+            result.appendChild(li);
+        }
+    });
 
-//         listArr.push(li);
-//         menuList.innerHTML = listArr.join("");
-//     });
-// }
-
-
-
-
-
-// elAll.addEventListener('click', () => {
-//     let sortLi = document.querySelectorAll('li');
-
-//     let a = [...sortLi].filter(el => {
-//         if (el.classList.contains("contact__family") || el.classList.contains("contact__friends") || el.classList.contains("contact__colleague")) {
-//             el.style.display = 'block'
-//             return el
-//         }
-//     })
-
-//     console.log(a)
-
-// });
-
-// elFam.addEventListener('click', () => {
-//     let sortLi = document.querySelectorAll('li');
-
-//     let a = [...sortLi].filter(el => {
-//         if (!el.classList.contains("contact__family")) {
-//             el.style.display = 'none'
-//             return el
-//         } else {
-//             el.style.display = 'block'
-//             return el
-//         }
-//     })
-// });
-
-// elFri.addEventListener('click', () => {
-//     let sortLi = document.querySelectorAll('li');
-
-//     let a = [...sortLi].filter(el => {
-//         if (!el.classList.contains("contact__friends")) {
-//             el.style.display = 'none'
-//             return el
-//         } else {
-//             el.style.display = 'block'
-//             return el
-//         }
-//     })
-
-
-
-// });
-
-// elCol.addEventListener('click', () => {
-//     let sortLi = document.querySelectorAll('li');
-
-//     let a = [...sortLi].filter(el => {
-//         if (!el.classList.contains("contact__colleague")) {
-//             el.style.display = 'none'
-//             return el
-//         } else {
-//             el.style.display = 'block'
-//             return el
-//         }
-//     });
-
-
-// });
-
-
-
-// $('.slick-slide').slick({
-//     slidesToShow: 3,
-//     slidesToScroll: 1,
-//     autoplay: true,
-//     autoplaySpeed: 2000,
-// });
+    search.value = '';
+});
