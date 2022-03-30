@@ -130,7 +130,6 @@
     display: flex;
     flex-direction: row;
     background-color: #131A20;
-    // margin-top: 95px;
     padding: 50px 0;
     .movies__img-item {
         position: relative;
@@ -154,19 +153,6 @@
         text-decoration: none;
         flex-wrap: wrap;
         gap: 20px;
-        // justify-content: space-around;
-    }
-    .movies__item {
-        width: 250px !important;
-        padding: 0 !important;
-        border: 1px solid #000;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        .bxs-bookmark-star {
-            font-size: 25px;
-        }
     }
     p {
         margin: 0;
@@ -203,12 +189,23 @@
     }
 }
 
+.movies__item {
+    width: 250px !important;
+    padding: 0 !important;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    .bxs-bookmark-star {
+        font-size: 25px;
+    }
+}
+
 .favorit {
-    // height: 100v;
     color: #fff;
     background-color: #222933;
     text-align: center;
-    // z-index: 9999;
 }
 
 .modal {
@@ -227,10 +224,6 @@
         flex-direction: column !important;
     }
     .modal-body {
-        // img {
-        //     width: 100%;
-        //     height: 250px;
-        // }
         background-color: #222933;
         display: flex;
         flex-direction: row;
@@ -402,72 +395,7 @@
 }
 
 .movies__searchbar {
-    background-color: #222933;
-}
-
-.searching__bar-main {
-    gap: 50px;
-}
-
-// Search part //
-.search {
-    display: none;
-    position: fixed;
-    top: 60px;
-    width: 100%;
-    height: 100vh;
-    transition: all 5s linear;
-    z-index: 1051;
-    &__main {
-        width: 525px;
-        max-height: 100vh;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        margin: 0 auto;
-        transform: translateX(50px);
-    }
-    &__box {
-        border-radius: 6px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-        padding: 10px;
-        margin-bottom: 15px;
-    }
-    &__title {
-        font-size: 30px;
-        font-weight: 700;
-        padding-left: 20px;
-    }
-    &__list {
-        // height: 25px;
-        max-height: 85vh;
-        list-style-type: none;
-        padding: 15px;
-        overflow: auto;
-    }
-    &__item {
-        border-radius: 6px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-    &__imgbox {
-        width: 80px;
-        height: 100px;
-        border-radius: 4px;
-        overflow: hidden;
-        margin-right: 15px;
-    }
-    &__img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    &__name {
-        width: 80%;
-        font-size: 20px;
-        font-weight: 500;
-    }
+    background-color: #222933 !important;
 }
 
 form {
@@ -486,7 +414,7 @@ form {
         padding: 10px 15px;
         border: none;
         outline: none;
-        // margin-right: 20px;
+        margin-right: 10px;
     }
     .all-btn {
         padding: 10px 100px;
@@ -498,5 +426,71 @@ form {
         color: #fff;
         border-radius: 20px;
         padding: 0 50px;
+    }
+}
+
+.footer {
+    background-color: #222933;
+}
+
+.footer__main {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .footer__logo {
+        img {
+            width: 100%;
+            height: 100%
+        }
+        ;
+    }
+    .footer__list {
+        margin-bottom: 0;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+        display: flex;
+        width: 60%;
+        flex-wrap: wrap;
+        .footer__item {
+            border: 1px solid rgba(173, 219, 247, 0.253);
+            border-radius: 5px;
+            padding: 5px;
+            transition: all ease 1s;
+            &:hover {
+                background-color: #86c5d4;
+            }
+        }
+        a {
+            font-size: 11px;
+            text-decoration: none;
+            color: #b8e0ec;
+        }
+    }
+    img {
+        width: 40px;
+        height: 40px;
+    }
+    ;
+}
+
+.search__lists {
+    background-color: #131A20;
+}
+
+.search__results {
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .movies__item {
+        border: 1px solid rgba(255, 255, 255, 0.308);
+        background-color: #222933;
+        width: 250px;
+        color: #fff;
     }
 }

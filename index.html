@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="css/flexboxgrid.min.css" />
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.min.css" />
 </head>
 
@@ -171,27 +170,13 @@
 
                         <input class="search-bar__item2" type="text" placeholder="search movie">
 
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle all-btn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                         All
-                        </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                <li><a class="dropdown-item active" href="#">Fantastic</a></li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Thriller</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Thriller</a></li>
-                                <li><a class="dropdown-item" href="#">Fantastic</a></li>
-                                <li><a class="dropdown-item" href="#">Documentary</a></li>
-                                <li><a class="dropdown-item" href="#">Music</a></li>
-                                <li><a class="dropdown-item" href="#">Adventure</a></li>
-                                <li><a class="dropdown-item" href="#">Comedy</a></li>
-                                <li><a class="dropdown-item" href="#">Animation</a></li>
+                        <input class="category-input" type="text" list="date" name="category" placeholder="Category">
+                        <datalist id="date" class="data-list">
+                            <option>All</option>
+                        </datalist>
 
-                            </ul>
-                        </div>
-                        <input type="number" placeholder="year" id="year">
+                        <input type="number" placeholder="year" id="fromYear">
+                        <input type="number" placeholder="year" id="toYear">
                         <input type="submit" value="submit" class="submit">
                     </form>
 
@@ -202,20 +187,15 @@
 
         <section class="search__lists">
             <div class="container">
-
-                <ul class="search__results">
+                <ul class="search__results m-0">
 
                 </ul>
-
             </div>
         </section>
 
         <section class="movies">
             <div class="container">
                 <h2 class="movies__title">Tarjima Kinolar</h2>
-
-
-
                 <ul class="movies__list d-flex" id="characterlist">
                     <!-- <li class="movies__item ">
                         <div class="movies__img-item">
@@ -286,7 +266,36 @@
 
 
     </main>
-
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__main">
+                <div class="footer__logo">
+                    <img src="images/logo.gif" alt="logotip">
+                </div>
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="http://uzmovi.com/contact" title="Обратная связь">Обратная связь</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="http://uzmovi.com/rightholder" title="Rightholder">Правообладателям</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="http://uzmovi.com/rightholder_eng" title="Rightholder">DMCA</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="http://uzmovi.com/rules" title="правила">Qoida</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="http://uzmovi.com/ads" title="Реклама">Реклама</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="http://t.me/uzmovisupport_bot" title="Texnik qo'llab quvvatlash">Texnik qo'llab quvvatlash</a>
+                    </li>
+                </ul>
+                <img src="http://cdn.uzmovi.com/v1/images/16+.png?v=2.2.5" alt="16+">
+            </div>
+        </div>
+    </footer>
 
     <script src="js/normalized-movies.js"></script>
     <script src="js/main.js"></script>
